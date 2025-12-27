@@ -64,7 +64,7 @@ export function HeroSection() {
                     href="#contacto"
                     className="inline-flex items-center justify-center rounded-full border border-transparent bg-[linear-gradient(135deg,#c8a033,#f9d423)] px-8 py-3 text-base font-semibold text-foreground shadow-cta-primary transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
                   >
-                    Solicitar evaluación de caso
+                    Solicitar evaluación de caso.
                   </Link>
                 </div>
                 <div className="rounded-2xl bg-muted/60 p-4 text-sm text-muted-foreground">
