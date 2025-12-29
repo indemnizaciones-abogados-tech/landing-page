@@ -4,6 +4,7 @@ import { Check, MessageCircle } from "lucide-react";
 
 const practiceHighlights = [
   {
+    id: "highlight-01",
     cases: [
       "Trámite contravencional y audiencias prejudiciales",
       "Reclamaciones ante compañías aseguradoras",
@@ -47,7 +48,10 @@ export function HeroSection() {
                 className="object-contain opacity-15"
               />
               <div className="relative flex flex-col gap-6">
-                <h1 id="hero-heading" className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center">
+                <h1
+                  id="hero-heading"
+                  className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl text-center"
+                >
                   Nos enfocamos en ofrecer soluciones jurídicas efectivas y personalizadas, respaldadas por un profundo conocimiento y compromiso con nuestros clientes.
                 </h1>
                 <div className="flex flex-col gap-2 text-base sm:flex-row sm:gap-3 sm:text-sm text-center">
@@ -64,7 +68,7 @@ export function HeroSection() {
                     href="#contacto"
                     className="inline-flex items-center justify-center rounded-full border border-transparent bg-[linear-gradient(135deg,#c8a033,#f9d423)] px-8 py-3 text-base font-semibold text-foreground shadow-cta-primary transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
                   >
-                    Solicitar evaluación de caso
+                    Solicitar evaluación de caso.
                   </Link>
                 </div>
                 <div className="rounded-2xl bg-muted/60 p-4 text-sm text-muted-foreground">
@@ -80,9 +84,9 @@ export function HeroSection() {
               </div>
               <div className="mt-6 space-y-4">
                 {practiceHighlights.map((practice) => (
-                  <ul className="mt-3 space-y-2 text-xs text-white/80">
-                    {practice.cases.map((item) => (
-                      <li key={item} className="flex items-start gap-2">
+                  <ul key={practice.id} className="mt-3 space-y-2 text-xs text-white/80">
+                    {practice.cases.map((item, index) => (
+                      <li key={`${practice.id}-${index}`} className="flex items-start gap-2">
                         <span className="rounded-full bg-white/10 p-1" aria-hidden="true">
                           <Check className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
                         </span>

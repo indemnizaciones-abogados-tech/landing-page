@@ -130,7 +130,7 @@ export function PracticeAreasSection() {
   return (
     <section id="servicios" className="bg-muted/40 py-16" aria-labelledby="areas-heading">
       <div className="container space-y-10">
-        <div className="max-w-3xl space-y-4">
+        <div className="max-w-4xl space-y-4 lg:max-w-5xl">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">Áreas de práctica</p>
           <h2 id="areas-heading" className="text-2xl font-semibold md:text-4xl">
             Conoce cada frente legal antes de iniciar tu estrategia

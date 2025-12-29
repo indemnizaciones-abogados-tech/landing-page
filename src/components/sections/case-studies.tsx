@@ -130,7 +130,7 @@ export function CaseStudiesSection() {
   return (
     <section id="historias" className="py-16" aria-labelledby="case-heading">
       <div className="container space-y-10">
-        <div className="max-w-2xl space-y-2">
+        <div className="max-w-4xl space-y-2 lg:max-w-5xl">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">Casos de éxito</p>
           <h2 id="case-heading" className="text-2xl font-semibold md:text-4xl">
             Testimonios que respaldan indemnizaciones reales

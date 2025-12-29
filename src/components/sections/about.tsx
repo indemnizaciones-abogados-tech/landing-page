@@ -37,7 +37,7 @@ export function AboutSection() {
     <section id="confianza" className="bg-muted/30 py-16" aria-labelledby="about-heading">
       <div className="container space-y-10">
         <div className="space-y-8">
-          <div className="max-w-3xl space-y-4">
+          <div className="max-w-4xl space-y-4 lg:max-w-5xl">
             <p className="text-sm font-semibold uppercase tracking-wide text-primary">Quienes somos</p>
             <h2 id="about-heading" className="text-2xl font-semibold md:text-4xl">
               Socios que lideran cada caso con presencia directa en juzgados y mesas de negociación

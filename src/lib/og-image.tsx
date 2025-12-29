@@ -109,7 +109,7 @@ export function generateOgImage(size: Size) {
           </div>
           <div
             style={{
-              display: "inline-flex",
+              display: "flex",
               alignItems: "center",
               gap: "16px",
               borderRadius: "999px",
