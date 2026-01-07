@@ -31,8 +31,8 @@ export function ContactSection() {
               <div className="grid gap-4 rounded-2xl bg-white/10 p-5 text-sm">
                 <div>
                   <p className="text-white/70">Correo</p>
-                  <a className="font-semibold text-accent" href="mailto:contacto@indeminzaciones.com">
-                    contacto@indeminzaciones.com
+                  <a className="font-semibold text-accent" href="mailto:contacto@indeminzacionesabogados.com">
+                    contacto@indeminzacionesabogados.com
                   </a>
                 </div>
                 <div>
@@ -48,7 +48,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <p className="text-white/70">Disponibilidad</p>
-                  <p className="font-semibold text-white">Lunes a sábado · 7:00 a. m. - 8:00 p. m.</p>
+                  <p className="font-semibold text-white">Lunes a sábado · 7:00 a. m. - 7:00 p. m.</p>
                 </div>
               </div>
             </div>
@@ -62,7 +62,7 @@ export function ContactSection() {
                 id="nombre"
                 name="nombre"
                 type="text"
-                placeholder="Tu nombre"
+                placeholder="Tu nombre y apellido"
                 required
                 className="mt-2 w-full rounded-2xl border border-border bg-white/80 px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-primary"
               />
@@ -112,8 +112,9 @@ export function ContactSection() {
                 id="tipo-caso"
                 name="tipo-caso"
                 className="mt-2 w-full rounded-2xl border border-border bg-white/80 px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-primary"
-                defaultValue="responsabilidad"
+                defaultValue="accidentes"
               >
+                <option value="accidentes">Accidentes de tránsito</option>
                 <option value="responsabilidad">Responsabilidad civil</option>
                 <option value="seguros">Seguros / indemnizaciones</option>
                 <option value="medico">Derecho médico</option>

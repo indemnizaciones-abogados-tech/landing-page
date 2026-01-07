@@ -40,124 +40,120 @@ export const metadata: Metadata = {
 export default function TermsAndConditionsPage() {
   return (
     <>
-      <SiteHeader />
-      <main className="bg-background">
-        <section className="bg-muted/40 py-16 md:py-20" aria-labelledby="terms-heading">
-          <div className="container space-y-6">
-            <p className="text-sm font-semibold uppercase tracking-hero text-primary">Marco legal del sitio</p>
-            <div className="max-w-4xl space-y-4">
-              <h1 id="terms-heading" className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Términos y Condiciones
-              </h1>
-              <p className="text-base text-muted-foreground md:text-lg">
-                Los presentes términos y condiciones constituyen un acuerdo legal de forma vinculante celebrado entre usted y
-                nuestra firma con relación al acceso a la página web y a cualquier otro medio de comunicación que utilicemos.
-              </p>
-              <p className="text-base text-muted-foreground md:text-lg">
+      <SiteHeader hideNav />
+      <main className="bg-background min-h-screen">
+        {/* Header del Documento */}
+        <section className="bg-muted/30 pt-24 pb-12 md:pt-32 md:pb-16 border-b border-border/50">
+          <div className="container max-w-4xl text-center space-y-6">
+            <p className="text-sm font-bold uppercase tracking-widest text-primary">Marco legal del sitio</p>
+            <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+              Términos y Condiciones
+            </h1>
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              Los presentes términos constituyen un acuerdo vinculante que regula el acceso y uso de nuestros servicios digitales y canales de comunicación.
+            </p>
+          </div>
+        </section>
+
+        {/* Contenido del Documento */}
+        <section className="py-12 md:py-16">
+          <div className="container max-w-3xl space-y-12">
+
+            {/* Introducción */}
+            <div className="prose prose-slate max-w-none text-muted-foreground">
+              <p className="text-lg">
                 Usted acepta nuestros términos y condiciones al acceder a la página web y anexar sus datos personales para
                 realizar contacto con nosotros sobre su asesoría o trámite jurídico.
               </p>
             </div>
-          </div>
-        </section>
 
-        <section className="py-16" aria-labelledby="scope-heading">
-          <div className="container space-y-6">
-            <div className="max-w-3xl space-y-4">
-              <h2 id="scope-heading" className="text-2xl font-semibold md:text-4xl">
-                Alcance, aceptación y responsabilidad del usuario
+            <hr className="border-border/60" />
+
+            {/* Alcance */}
+            <article className="space-y-4">
+              <h2 className="text-2xl font-bold text-foreground tracking-tight">
+                1. Alcance, aceptación y responsabilidad
               </h2>
-              <p className="text-base text-muted-foreground md:text-lg">
-                La información proporcionada en la página web no está destinada a ser distribuida o utilizada por ninguna persona
-                o entidad en ninguna jurisdicción donde su uso sea contrario a la normativa que nos somete.
-              </p>
-              <p className="text-base text-muted-foreground md:text-lg">
-                En consecuencia, las personas que decidan acceder y anexar sus datos personales lo hacen por iniciativa propia y
-                son las únicas responsables del cumplimiento de las leyes locales.
-              </p>
-              <p className="text-base text-muted-foreground">
-                Si su información anexada o registrada en la página web es falsa, inexacta o incompleta, tenemos el derecho de
-                suspender su atención por no existir certeza del usuario que se atenderá.
-              </p>
-            </div>
-            <div className="rounded-3xl border border-border/70 bg-muted/30 p-6 md:p-8">
-              <h3 className="text-xl font-semibold text-foreground">Manejo de medios de contacto</h3>
-              <p className="mt-3 text-base text-muted-foreground">
-                Toda interacción digital, telefónica o presencial quedará sujeta a estos términos. Al remitirnos documentos,
-                fotografías o comunicaciones, certifica que cuenta con la autorización necesaria para compartirlos y que no
-                vulnera derechos de terceros.
-              </p>
-            </div>
-          </div>
-        </section>
+              <div className="space-y-4 text-base text-muted-foreground leading-relaxed">
+                <p>
+                  La información proporcionada en la página web no está destinada a ser distribuida o utilizada por ninguna persona
+                  o entidad en ninguna jurisdicción donde su uso sea contrario a la normativa que nos somete.
+                </p>
+                <p>
+                  En consecuencia, las personas que decidan acceder y anexar sus datos personales lo hacen por iniciativa propia y
+                  son las únicas responsables del cumplimiento de las leyes locales. Si su información es falsa, inexacta o incompleta,
+                  tenemos el derecho de suspender su atención.
+                </p>
+              </div>
 
-        <section className="bg-muted/20 py-16" aria-labelledby="guarantees-heading">
-          <div className="container space-y-8">
-            <div className="max-w-3xl space-y-4">
-              <h2 id="guarantees-heading" className="text-2xl font-semibold md:text-4xl">
-                Garantías del usuario
+              <div className="mt-6 rounded-2xl border border-primary/20 bg-primary/5 p-6">
+                <h3 className="text-lg font-semibold text-foreground mb-2">Manejo de medios de contacto</h3>
+                <p className="text-sm text-muted-foreground">
+                  Toda interacción digital, telefónica o presencial quedará sujeta a estos términos. Al remitirnos documentos,
+                  fotografías o comunicaciones, certifica que cuenta con la autorización necesaria para compartirlos.
+                </p>
+              </div>
+            </article>
+
+            {/* Garantías */}
+            <article className="space-y-6">
+              <h2 className="text-2xl font-bold text-foreground tracking-tight">
+                2. Garantías del usuario
               </h2>
-              <p className="text-base text-muted-foreground md:text-lg">
-                Para mantener un servicio íntegro y seguro, cada visitante declara lo siguiente al contactarnos por el sitio web.
+              <p className="text-muted-foreground">
+                Para mantener un servicio íntegro y seguro, cada visitante declara lo siguiente al contactarnos:
               </p>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2">
-              {guarantees.map((item) => (
-                <article key={item.title} className="rounded-3xl border border-border bg-white/90 p-6 shadow-sm">
-                  <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
-                  <p className="mt-3 text-base text-muted-foreground">{item.description}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {guarantees.map((item) => (
+                  <div key={item.title} className="rounded-xl border border-border bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
+                    <h3 className="text-base font-semibold text-foreground mb-2">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+            </article>
 
-        <section className="py-16" aria-labelledby="prohibited-heading">
-          <div className="container space-y-8">
-            <div className="max-w-3xl space-y-4">
-              <h2 id="prohibited-heading" className="text-2xl font-semibold md:text-4xl">
-                Actividades prohibidas
+            {/* Actividades Prohibidas */}
+            <article className="space-y-6">
+              <h2 className="text-2xl font-bold text-foreground tracking-tight">
+                3. Actividades prohibidas
               </h2>
-              <p className="text-base text-muted-foreground md:text-lg">
-                Al utilizar nuestros servicios digitales, usted se compromete a no incurrir en ninguna de las siguientes
-                conductas, pues afectan la seguridad de la información y el correcto funcionamiento del despacho.
+              <p className="text-muted-foreground">
+                Queda estrictamente prohibido incurrir en las siguientes conductas que afectan la seguridad y el funcionamiento del despacho:
               </p>
-            </div>
-            <ul className="space-y-4 text-base text-muted-foreground">
-              {prohibitedActivities.map((activity) => (
-                <li key={activity} className="rounded-3xl border border-border/70 bg-muted/40 p-5">
-                  {activity}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
+              <ul className="space-y-3">
+                {prohibitedActivities.map((activity, index) => (
+                  <li key={index} className="flex gap-3 text-muted-foreground">
+                    <span className="flex-shrink-0 h-6 w-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold">✕</span>
+                    <span>{activity}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
 
-        <section className="bg-muted/30 py-16" aria-labelledby="changes-heading">
-          <div className="container space-y-6">
-            <div className="max-w-3xl space-y-4">
-              <h2 id="changes-heading" className="text-2xl font-semibold md:text-4xl">
+            <hr className="border-border/60" />
+
+            {/* Actualizaciones */}
+            <article className="space-y-4">
+              <h2 className="text-xl font-bold text-foreground tracking-tight">
                 Actualizaciones y modificaciones
               </h2>
-              <p className="text-base text-muted-foreground md:text-lg">
-                Nos reservamos el derecho de modificar estos términos y condiciones en cualquier momento. En caso de ajustes,
-                publicaremos la nueva versión con la fecha de actualización para que puedas revisarla antes de seguir usando el
-                sitio.
+              <p className="text-muted-foreground">
+                Nos reservamos el derecho de modificar estos términos en cualquier momento. El uso continuo de la página web después de la publicación de cambios constituye la aceptación expresa de los nuevos términos.
               </p>
-              <p className="text-sm text-muted-foreground md:text-base">
-                El uso continuo de la página web después de la publicación de cambios constituye la aceptación expresa de los
-                nuevos términos.
+            </article>
+
+            {/* Contacto Legal */}
+            <div className="rounded-2xl bg-muted p-8 text-center space-y-4">
+              <p className="text-sm font-medium text-foreground">
+                ¿Dudas sobre nuestros términos legales?
               </p>
-            </div>
-            <div className="rounded-3xl border border-primary/30 bg-white/90 p-6 shadow-sm">
-              <p className="text-sm text-muted-foreground">
-                Ante cualquier inquietud relacionada con estos términos o para reportar actividades sospechosas, escribe a{" "}
-                <a href="mailto:contacto@indeminzaciones.com" className="font-semibold text-primary underline">
-                  contacto@indeminzaciones.com
-                </a>{" "}
-                o comunícate al WhatsApp oficial +57 305 256 6811.
+              <p className="text-muted-foreground">
+                Escribe a <a href="mailto:contacto@indemnizacionesabogados.com" className="font-semibold text-primary hover:underline">contacto@indemnizacionesabogados.com</a>
+                <br />o contáctanos vía WhatsApp al <strong>+57 305 256 6811</strong>.
               </p>
             </div>
+
           </div>
         </section>
       </main>
