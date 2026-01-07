@@ -47,7 +47,7 @@ export function ContactSection() {
       });
 
       (e.target as HTMLFormElement).reset();
-    } catch (error) {
+    } catch (_) {
       toast.error("Ocurrió un error al enviar", {
         description: "Por favor intenta de nuevo o escríbenos por WhatsApp.",
         icon: <AlertCircle className="h-5 w-5 text-red-600" />,
