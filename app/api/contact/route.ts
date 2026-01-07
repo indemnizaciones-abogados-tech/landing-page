@@ -31,16 +31,68 @@ export async function POST(request: Request) {
       to: adminEmail as string, // Asegurar que no sea undefined
       subject: `Nueva solicitud de contacto: ${nombre} - ${tipoCasoLabel}`,
       html: `
-        <h2>Nuevo contacto desde la web</h2>
-        <p><strong>Nombre:</strong> ${nombre}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Teléfono:</strong> ${telefono}</p>
-        <p><strong>Ciudad:</strong> ${ciudad || 'No especificada'}</p>
-        <p><strong>Tipo de Caso:</strong> ${tipoCasoLabel}</p>
-        <p><strong>Mensaje:</strong></p>
-        <blockquote style="background: #f9f9f9; padding: 10px; border-left: 4px solid #ccc;">
-          ${mensaje}
-        </blockquote>
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <style>
+              body { font-family: 'Arial', sans-serif; background-color: #f4f4f5; padding: 20px; }
+              .card { background: #ffffff; max-width: 600px; margin: 0 auto; border-radius: 8px; border: 1px solid #e2e8f0; overflow: hidden; }
+              .header { background: #0f172a; padding: 15px 20px; color: #fff; font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+              .content { padding: 25px; }
+              .field { margin-bottom: 20px; }
+              .label { font-size: 12px; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; margin-bottom: 5px; }
+              .value { font-size: 16px; color: #0f172a; font-weight: 500; }
+              .message-box { background: #f8fafc; padding: 15px; border-radius: 6px; border-left: 4px solid #c8a033; margin-top: 10px; font-size: 15px; line-height: 1.6; color: #334155; }
+              .footer { border-top: 1px solid #e2e8f0; padding: 15px; background: #f8fafc; text-align: center; color: #94a3b8; font-size: 12px; }
+            </style>
+          </head>
+          <body>
+            <div class="card">
+              <div class="header">Nueva solicitud de contacto desde laß Web</div>
+              <div class="content">
+                <div class="field">
+                  <div class="label">Nombre del solicitante</div>
+                  <div class="value">${nombre}</div>
+                </div>
+                
+                <table style="width: 100%; border-collapse: collapse;">
+                  <tr>
+                    <td style="padding-right: 10px; vertical-align: top; width: 50%;">
+                      <div class="field">
+                        <div class="label">Teléfono</div>
+                        <div class="value">${telefono}</div>
+                      </div>
+                    </td>
+                    <td style="padding-left: 10px; vertical-align: top; width: 50%;">
+                      <div class="field">
+                        <div class="label">Ciudad</div>
+                        <div class="value">${ciudad || 'No especificada'}</div>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+
+                <div class="field">
+                  <div class="label">Correo Electrónico</div>
+                  <div class="value"><a href="mailto:${email}" style="color: #0f172a; text-decoration: none;">${email}</a></div>
+                </div>
+
+                <div class="field">
+                  <div class="label">Tipo de Caso</div>
+                  <div class="value" style="color: #c8a033; font-weight: 700;">${tipoCasoLabel}</div>
+                </div>
+
+                <div class="field">
+                  <div class="label">Mensaje del usuario</div>
+                  <div class="message-box">${mensaje}</div>
+                </div>
+              </div>
+              <div class="footer">
+                Recibido el ${new Date().toLocaleDateString('es-CO', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
+              </div>
+            </div>
+          </body>
+        </html>
       `,
     });
 
