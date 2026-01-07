@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "sonner";
 import { legalServiceJsonLd } from "@/src/components/seo/legal-service-schema";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(legalServiceJsonLd) }}
         />
+        <Toaster position="top-center" richColors />
       </body>
     </html>
   );

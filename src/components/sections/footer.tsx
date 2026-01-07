@@ -6,7 +6,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border bg-background py-12 text-sm text-muted-foreground" aria-label="Pie de página">
-      <div className="container flex flex-col gap-10">
+      <div className="container flex flex-col gap-2">
         {/* Top Section: Branding & Legal */}
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-start">
           {/* Left: Branding */}
@@ -27,7 +27,7 @@ export function Footer() {
         </div>
 
         {/* Middle Section: Social Media */}
-        <div className="flex justify-center gap-6">
+        <div className="flex justify-center gap-5">
           <Link
             href="https://www.instagram.com/indemnizaciones.abogados/"
             target="_blank"
