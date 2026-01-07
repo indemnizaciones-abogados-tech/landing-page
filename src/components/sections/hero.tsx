@@ -6,16 +6,16 @@ const practiceHighlights = [
   {
     id: "highlight-01",
     cases: [
-      "Trámite contravencional y audiencias prejudiciales",
-      "Reclamaciones ante compañías aseguradoras",
-      "Mal estado de vías y señalización deficiente",
-      "Falla en la prestación del servicio de salud",
-      "Auditoría de pólizas y exclusiones",
-      "Defensa y reclamación ante aseguradoras",
-      "Revisión de tratamientos y protocolos autorizados",
-      "Culpa patronal y fallas en el sistema de gestión de seguridad",
-      "Reclamaciones de indemnización ante la ARL",
-      "Procesos por enfermedad laboral",
+      "Trámite contravencional y audiencias prejudiciales.",
+      "Reclamaciones ante compañías aseguradoras.",
+      "Mal estado de vías y señalización deficiente.",
+      "Falla en la prestación del servicio de salud.",
+      "Auditoría de pólizas y exclusiones.",
+      "Defensa y reclamación ante aseguradoras.",
+      "Revisión de tratamientos y protocolos autorizados.",
+      "Culpa patronal y fallas en el sistema de gestión de seguridad.",
+      "Reclamaciones de indemnización ante la ARL.",
+      "Procesos por enfermedad laboral.",
     ],
   },
 ];
@@ -79,7 +79,7 @@ export function HeroSection() {
             <article className="flex flex-col rounded-featured border border-white/15 bg-white/5 p-6 text-white backdrop-blur sm:p-8 md:p-10">
               <div className="space-y-4">
                 <h2 className="text-2xl font-semibold text-white">
-                  Casos frecuentes que atendemos a diario
+                  Casos frecuentes que atendemos día a día:
                 </h2>
               </div>
               <div className="mt-6 space-y-4">
