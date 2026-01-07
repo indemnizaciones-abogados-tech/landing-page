@@ -155,8 +155,7 @@ export function PracticeAreasSection() {
                       <Image src={area.image} alt="" fill className="object-cover" sizes="64px" />
                     </div>
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">Área prioritaria</p>
-                      <h3 className="text-xl font-semibold">{area.title}</h3>
+                      <h3 className="text-xl font-semibold uppercase">{area.title}</h3>
                     </div>
                   </div>
                   <span
