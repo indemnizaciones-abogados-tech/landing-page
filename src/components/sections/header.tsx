@@ -24,7 +24,7 @@ export function SiteHeader({ hideNav = false }: SiteHeaderProps) {
   return (
     <header className="sticky top-0 z-40 border-b border-border/50 bg-background/90 backdrop-blur-xl">
       <div className="container flex items-center justify-between gap-3 py-3 md:py-4">
-        <Link href="/" className="flex items-center gap-3" onClick={closeMenu}>
+        <Link href="/" className="flex flex-1 items-center gap-3" onClick={closeMenu}>
           <Image
             src="/logos/Indeminzaciones-abogados_logo_arbol_ocre.png"
             alt="Organización Jurídica Indemnizaciones Abogados"
@@ -33,6 +33,14 @@ export function SiteHeader({ hideNav = false }: SiteHeaderProps) {
             priority
             className="h-12 w-auto"
           />
+          <div className="text-left leading-tight">
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground sm:text-xs sm:tracking-[0.35em]">
+              Organización jurídica
+            </p>
+            <p className="text-sm font-semibold tracking-wide text-foreground sm:text-lg">
+              Indemnizaciones Abogados
+            </p>
+          </div>
         </Link>
 
         {!hideNav && (
