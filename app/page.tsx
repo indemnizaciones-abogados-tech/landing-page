@@ -12,13 +12,25 @@ import { FloatingActions } from "@/src/components/ui/floating-actions";
 export const metadata: Metadata = {
   title: "Abogados de Responsabilidad Civil y Seguros | Indeminzaciones",
   description:
-    "Indeminzaciones Abogados protege a familias, médicos y empresas en casos complejos de responsabilidad civil, seguros y derecho médico en Colombia.",
+    "Expertos en indemnización por accidente de tránsito, indemnización laboral y casos de responsabilidad médica. Protegemos tus derechos con estrategia legal efectiva.",
   keywords: [
-    "abogados responsabilidad civil",
-    "abogados de seguros",
-    "derecho médico",
-    "indemnizaciones en Colombia",
-    "accidentes laborales",
+    // Core Services
+    "abogados responsabilidad civil colombia",
+    "indemnizaciones accidentes de tránsito",
+    "reclamaciones seguros",
+    "derecho médico y sanitario",
+    "abogados accidentes laborales",
+
+    // Long-tail & Specifics
+    "indemnización por muerte accidente de tránsito",
+    "demanda reparación directa estado",
+    "reclamación pago siniestro aseguradora",
+    "indemnización culpa patronal",
+    "negligencia médica",
+    "reclamación ante la arl",
+    "perjuicios morales y materiales",
+    "falla en el servicio medico",
+    "despido con fuero de salud",
   ],
   alternates: {
     canonical: "/",

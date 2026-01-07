@@ -27,6 +27,19 @@
   --radius: 0.75rem;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 18rem;
+  /* Mobile: Header height + breathing room */
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: 2.5rem;
+    /* Desktop: User preference */
+  }
+}
+
 body {
   font-family: var(--font-sans);
   background-color: hsl(var(--background));

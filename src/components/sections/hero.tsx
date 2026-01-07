@@ -50,10 +50,13 @@ export function HeroSection() {
               <div className="relative flex flex-col gap-6">
                 <h1
                   id="hero-heading"
-                  className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl text-center"
+                  className="text-xl font-bold tracking-tight sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl text-center"
                 >
-                  Nos enfocamos en ofrecer soluciones jurídicas efectivas y personalizadas, respaldadas por un profundo conocimiento y compromiso con nuestros clientes.
+                  Abogados Especialistas en Accidentes de Tránsito, Responsabilidad Civil, Seguros y Derecho Médico
                 </h1>
+                <p className="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl text-center">
+                  Nos enfocamos en ofrecer soluciones jurídicas efectivas para lograr tu indemnización, respaldadas por un profundo conocimiento y compromiso.
+                </p>
                 <div className="flex flex-col gap-2 text-base sm:flex-row sm:gap-3 sm:text-sm text-center">
                   <a
                     href={whatsappLink}
