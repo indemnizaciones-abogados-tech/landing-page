@@ -38,7 +38,7 @@ const areas: PracticeArea[] = [
       "Investigadores, matemáticos y físicos que reconstruyen el accidente.",
       "Médicos y psicólogos forenses que acreditan secuelas y daño moral.",
     ],
-    image: "/practice/accidentes-transito.svg",
+    image: "/practice/accidentes-transito.jpg",
   },
   {
     id: "estado",
@@ -62,7 +62,7 @@ const areas: PracticeArea[] = [
       "Acompañamiento en reclamaciones y demandas.",
       "Negociación directa con entidades estatales.",
     ],
-    image: "/practice/responsabilidad-estado.svg",
+    image: "/practice/responsabilidad-estado.jpg",
   },
   {
     id: "seguros",
@@ -83,7 +83,7 @@ const areas: PracticeArea[] = [
       "Interpretaciones erróneas en exclusiones.",
       "Negativa de pago por incumplimiento contractual.",
     ],
-    image: "/practice/seguros.svg",
+    image: "/practice/seguros.jpg",
   },
   {
     id: "derecho-medico",
@@ -98,7 +98,7 @@ const areas: PracticeArea[] = [
       "Revisión de tratamientos, medicamentos autorizados y procedimientos.",
       "Peritajes multidisciplinarios para probar fallas o defender actos médicos.",
     ],
-    image: "/practice/derecho-medico.svg",
+    image: "/practice/derecho-medico.jpg",
   },
   {
     id: "laborales",
@@ -120,7 +120,7 @@ const areas: PracticeArea[] = [
       "Restitución de derechos laborales vulnerados.",
       "Planes de rehabilitación supervisados por especialistas.",
     ],
-    image: "/practice/accidentes-laborales.svg",
+    image: "/practice/accidentes-laborales.jpg",
   },
 ];
 
