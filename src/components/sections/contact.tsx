@@ -1,10 +1,67 @@
+'use client';
+
+import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/src/components/ui/button";
+import { toast } from "sonner";
+import { CheckCircle2, Loader2, AlertCircle } from "lucide-react";
+import { CASE_TYPES } from "@/src/lib/constants";
 
 const whatsappLink =
   "https://wa.me/573052566811?text=Hola,%20necesito%20asesor%C3%ADa%20legal%20sobre%20indemnizaciones";
 
 export function ContactSection() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      nombre: formData.get("nombre"),
+      telefono: formData.get("telefono"),
+      ciudad: formData.get("ciudad"),
+      email: formData.get("email"),
+      tipoCaso: formData.get("tipo-caso"),
+      mensaje: formData.get("descripcion"),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Error al enviar el formulario");
+      }
+
+      toast.success("Solicitud enviada correctamente", {
+        description: "Revisa tu correo, te hemos enviado una confirmación.",
+        icon: <CheckCircle2 className="h-5 w-5 text-green-600" />,
+        duration: 5000,
+      });
+
+      (e.target as HTMLFormElement).reset();
+    } catch {
+      toast.error("Ocurrió un error al enviar", {
+        description: "Por favor intenta de nuevo o escríbenos por WhatsApp.",
+        icon: <AlertCircle className="h-5 w-5 text-red-600" />,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handlePhoneInput = (e: React.FormEvent<HTMLInputElement>) => {
+    // Elimina cualquier caracter que no sea número
+    e.currentTarget.value = e.currentTarget.value.replace(/[^0-9]/g, '');
+  };
+
   return (
     <section id="contacto" className="bg-muted/40 py-16" aria-labelledby="contact-heading">
       <div className="container rounded-section border border-border/80 bg-white/90 p-6 shadow-sheet md:p-12">
@@ -31,8 +88,8 @@ export function ContactSection() {
               <div className="grid gap-4 rounded-2xl bg-white/10 p-5 text-sm">
                 <div>
                   <p className="text-white/70">Correo</p>
-                  <a className="font-semibold text-accent" href="mailto:contacto@indeminzacionesabogados.com">
-                    contacto@indeminzacionesabogados.com
+                  <a className="font-semibold text-accent" href="mailto:contacto@indemnizacionesabogados.com">
+                    contacto@indemnizacionesabogados.com
                   </a>
                 </div>
                 <div>
@@ -53,7 +110,7 @@ export function ContactSection() {
               </div>
             </div>
           </div>
-          <form className="space-y-5 rounded-3xl border border-border/60 bg-muted/80 p-6 shadow-inner md:p-8">
+          <form onSubmit={handleSubmit} className="space-y-5 rounded-3xl border border-border/60 bg-muted/80 p-6 shadow-inner md:p-8">
             <div>
               <label className="text-sm font-semibold" htmlFor="nombre">
                 Nombre completo
@@ -76,6 +133,8 @@ export function ContactSection() {
                 name="telefono"
                 type="tel"
                 placeholder="+57 300 000 0000"
+                required
+                onInput={handlePhoneInput}
                 className="mt-2 w-full rounded-2xl border border-border bg-white/80 px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
@@ -88,6 +147,7 @@ export function ContactSection() {
                 name="ciudad"
                 type="text"
                 placeholder="Bogotá / Colombia"
+                required
                 className="mt-2 w-full rounded-2xl border border-border bg-white/80 px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
@@ -112,14 +172,13 @@ export function ContactSection() {
                 id="tipo-caso"
                 name="tipo-caso"
                 className="mt-2 w-full rounded-2xl border border-border bg-white/80 px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-primary"
-                defaultValue="accidentes"
+                defaultValue={CASE_TYPES[0].value}
               >
-                <option value="accidentes">Accidentes de tránsito</option>
-                <option value="responsabilidad">Responsabilidad civil</option>
-                <option value="seguros">Seguros / indemnizaciones</option>
-                <option value="medico">Derecho médico</option>
-                <option value="laboral">Accidentes laborales</option>
-                <option value="otro">Otro</option>
+                {CASE_TYPES.map((type) => (
+                  <option key={type.value} value={type.value}>
+                    {type.label}
+                  </option>
+                ))}
               </select>
             </div>
             <div>
@@ -130,6 +189,7 @@ export function ContactSection() {
                 id="descripcion"
                 name="descripcion"
                 rows={4}
+                required
                 className="mt-2 w-full rounded-2xl border border-border bg-white/80 px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
@@ -147,9 +207,17 @@ export function ContactSection() {
             </div>
             <Button
               type="submit"
-              className="w-full rounded-2xl bg-[linear-gradient(135deg,#c8a033,#f9d423)] text-foreground shadow-cta-primary"
+              disabled={isSubmitting}
+              className="w-full rounded-2xl bg-[linear-gradient(135deg,#c8a033,#f9d423)] text-foreground shadow-cta-primary disabled:opacity-70 disabled:cursor-not-allowed"
             >
-              Enviar y recibir asesoría
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Enviando...
+                </>
+              ) : (
+                "Enviar y recibir asesoría"
+              )}
             </Button>
             <p className="text-xs text-muted-foreground">
               Al enviar el formulario aceptas nuestra Política de Tratamiento de Datos Personales y el uso de tu información
