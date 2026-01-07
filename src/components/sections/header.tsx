@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, PhoneCall, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/src/lib/utils";
 
 const navItems = [
