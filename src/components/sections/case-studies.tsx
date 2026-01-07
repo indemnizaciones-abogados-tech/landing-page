@@ -18,21 +18,28 @@ const testimonials: Testimonial[] = [
     case: "Demanda en contra del Ministerio de Defensa - Ejército Nacional",
     quote:
       "“Recibí mi indemnización gracias al acompañamiento de Organización Jurídica Indemnizaciones Abogados. Estuvieron presentes en todo el proceso.”",
-    href: "https://www.instagram.com/indemnizaciones.abogados/",
+    href: "https://www.instagram.com/reel/DPIBYCzCcwP/?igsh=MW14azlteGluYTBoNg==",
   },
   {
     name: "Juan José",
     case: "Reclamación ante Seguros Generales Suramericana S.A.",
     quote:
       "“La firma me acompañó durante todo el proceso tras mi accidente de tránsito. Logré cubrir todos los perjuicios económicos y físicos. Los recomiendo.”",
-    href: "https://www.instagram.com/indemnizaciones.abogados/",
+    href: "https://www.instagram.com/reel/DNwPZ6YUqvk/?igsh=MTVsaWZ4aGN5OTY5ZQ==",
   },
   {
     name: "Gilberto Ocampo",
     case: "Reclamación contra Axa Colpatria Seguros S.A.",
     quote:
       "“Aunque estuve incapacitado casi cuatro meses, recibí acompañamiento de principio a fin. Gracias al equipo obtuve mi indemnización y confío plenamente en ellos.”",
-    href: "https://www.instagram.com/indemnizaciones.abogados/",
+    href: "https://www.instagram.com/indemnizaciones.abogados?igsh=MWhvM2Q1NDlxcWNrZg%3D%3D&utm_source=qr",
+  },
+  {
+    name: "Javier Hincapie",
+    case: "Reclamación en contra de Seguros Mundial S.A.",
+    quote:
+      "“Gracias a Organización Jurídica Indemnizaciones Abogados, por su acompañamiento en todo el proceso de reclamación; me logre comprar un carro nuevo y quedar con un dinero extra.”",
+    href: "https://www.instagram.com/reel/DQc13ueCbid/?igsh=MXIzN2dkNmVyaWpkNA==",
   },
 ];
 
@@ -169,7 +176,7 @@ export function CaseStudiesSection() {
           </button>
           <div className="overflow-hidden">
             <div
-              className="flex -mx-2 sm:-mx-3 lg:-mx-4 transition-transform duration-500 ease-out"
+              className="flex items-stretch -mx-2 sm:-mx-3 lg:-mx-4 transition-transform duration-500 ease-out"
               style={{ transform: `translateX(-${index * slideWidth}%)` }}
             >
               {testimonials.map((testimonial) => (
@@ -180,9 +187,9 @@ export function CaseStudiesSection() {
                   rel="noopener noreferrer"
                   aria-label={`Abrir testimonio de ${testimonial.name} en Instagram`}
                   style={{ flexBasis: `${slideWidth}%` }}
-                  className="flex h-full flex-shrink-0 px-2 sm:px-3 lg:px-4"
+                  className="flex flex-col flex-shrink-0 px-2 sm:px-3 lg:px-4"
                 >
-                  <article className="card-surface flex w-full flex-col justify-between rounded-3xl border border-border p-6 text-left shadow-card-strong transition hover:-translate-y-1">
+                  <article className="card-surface flex-1 flex w-full flex-col justify-between rounded-3xl border border-border p-6 text-left shadow-card-strong transition hover:-translate-y-1">
                     <div>
                       <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
                         <Quote className="h-6 w-6" />
