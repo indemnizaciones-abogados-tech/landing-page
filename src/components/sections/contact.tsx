@@ -224,14 +224,14 @@ export function ContactSection() {
                 className="mt-0.5 h-6 w-6 shrink-0 rounded border-border text-primary focus:ring-2 focus:ring-primary cursor-pointer accent-primary"
               />
               <label htmlFor="aviso" className="text-sm leading-snug text-muted-foreground cursor-pointer select-none">
-                Acepto la{" "}
+
                 <button
                   type="button"
                   onClick={() => setIsPrivacyModalOpen(true)}
                   className="font-semibold text-primary underline underline-offset-2 hover:text-primary/80"
                 >
-                  política de tratamiento de datos personales
-                </button>{" "}
+                  Acepto la política de tratamiento de datos personales
+                </button>
                 y autorizo el tratamiento confidencial de mis datos para recibir asesoría legal.
               </label>
             </div>
