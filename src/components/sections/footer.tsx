@@ -38,7 +38,7 @@ export function Footer() {
             <Instagram className="h-6 w-6" />
           </Link>
           <Link
-            href="https://www.linkedin.com/company/indemnizaciones-abogados"
+            href="https://www.linkedin.com/company/organizacion-juridica-indemnizaciones-abogados"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"

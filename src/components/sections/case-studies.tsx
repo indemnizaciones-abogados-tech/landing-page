@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/src/lib/utils";
@@ -134,6 +134,34 @@ export function CaseStudiesSection() {
     setIndex(indicatorIndex);
   };
 
+  // Touch swipe handling
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+  const minSwipeDistance = 50;
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchEndX.current = null;
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    const distance = touchStartX.current - touchEndX.current;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    if (isLeftSwipe) {
+      handleManualNav("next");
+    } else if (isRightSwipe) {
+      handleManualNav("prev");
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
   return (
     <section id="historias" className="py-16" aria-labelledby="case-heading">
       <div className="container space-y-10">
@@ -174,7 +202,12 @@ export function CaseStudiesSection() {
           >
             <ChevronRight className="h-5 w-5" />
           </button>
-          <div className="overflow-hidden">
+          <div
+            className="overflow-hidden touch-pan-y"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             <div
               className="flex items-stretch -mx-2 sm:-mx-3 lg:-mx-4 transition-transform duration-500 ease-out"
               style={{ transform: `translateX(-${index * slideWidth}%)` }}
@@ -189,9 +222,19 @@ export function CaseStudiesSection() {
                   style={{ flexBasis: `${slideWidth}%` }}
                   className="flex flex-col flex-shrink-0 px-2 sm:px-3 lg:px-4"
                 >
-                  <article className="card-surface flex-1 flex w-full flex-col justify-between rounded-3xl border border-border p-6 text-left shadow-card-strong transition hover:-translate-y-1">
-                    <div>
-                      <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <article className="relative flex-1 flex w-full flex-col justify-between overflow-hidden rounded-3xl border border-primary/30 bg-gradient-to-br from-amber-50 via-[#fff9f0] to-orange-50 p-6 text-left shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+                    {/* Decorative background elements */}
+                    <div className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-gradient-to-br from-primary/25 to-amber-200/30 blur-2xl" />
+                    <div className="pointer-events-none absolute -left-6 -bottom-6 h-28 w-28 rounded-full bg-gradient-to-tr from-orange-200/40 to-amber-100/30 blur-xl" />
+                    <div className="pointer-events-none absolute right-4 bottom-4 h-20 w-20 opacity-[0.08]">
+                      <svg viewBox="0 0 100 100" fill="currentColor" className="text-primary">
+                        <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="2" fill="none" />
+                        <circle cx="50" cy="50" r="30" stroke="currentColor" strokeWidth="1.5" fill="none" />
+                        <circle cx="50" cy="50" r="15" fill="currentColor" />
+                      </svg>
+                    </div>
+                    <div className="relative z-10">
+                      <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 text-primary shadow-sm">
                         <Quote className="h-6 w-6" />
                       </span>
                       <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
@@ -199,7 +242,7 @@ export function CaseStudiesSection() {
                       </p>
                       <p className="mt-4 text-base text-foreground md:text-lg">{testimonial.quote}</p>
                     </div>
-                    <div className="mt-6">
+                    <div className="relative z-10 mt-6 pt-4 border-t border-primary/10">
                       <p className="text-base font-semibold">{testimonial.name}</p>
                       <p className="text-sm text-muted-foreground">Consulta verificada en Instagram</p>
                     </div>
