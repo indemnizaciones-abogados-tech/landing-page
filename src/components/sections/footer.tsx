@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
-
+import { Instagram, Linkedin } from "lucide-react";
+/*import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";*/
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
