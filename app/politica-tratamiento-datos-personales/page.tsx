@@ -70,7 +70,7 @@ export default function DataPolicyPage() {
           <div className="container max-w-4xl text-center space-y-6">
             <p className="text-sm font-bold uppercase tracking-widest text-primary">Protección de información</p>
             <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-              Política de Datos Personales
+              Política de Tratamiento de Datos Personales
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               Garantizamos el derecho constitucional que tienen todas las personas a conocer, actualizar y rectificar la información recogida sobre ellas.
