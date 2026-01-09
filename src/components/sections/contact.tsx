@@ -193,15 +193,15 @@ export function ContactSection() {
                 className="mt-2 w-full rounded-2xl border border-border bg-white/80 px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
-            <div className="flex items-start gap-2 text-xs text-muted-foreground">
+            <div className="flex items-start gap-4 py-2">
               <input
                 id="aviso"
                 name="aviso"
                 type="checkbox"
                 required
-                className="mt-1 h-4 w-4 rounded border-border text-primary focus:ring-2 focus:ring-primary"
+                className="mt-0.5 h-6 w-6 shrink-0 rounded border-border text-primary focus:ring-2 focus:ring-primary cursor-pointer accent-primary"
               />
-              <label htmlFor="aviso">
+              <label htmlFor="aviso" className="text-sm leading-snug text-muted-foreground cursor-pointer select-none">
                 Acepto el aviso de privacidad y autorizo el tratamiento confidencial de mis datos para recibir asesoría legal.
               </label>
             </div>
