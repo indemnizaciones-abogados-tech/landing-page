@@ -6,12 +6,34 @@ import { Button } from "@/src/components/ui/button";
 import { toast } from "sonner";
 import { CheckCircle2, Loader2, AlertCircle } from "lucide-react";
 import { CASE_TYPES } from "@/src/lib/constants";
+import Link from "next/link";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/src/components/ui/dialog";
+
+const dataPurposes = [
+  { title: "Atención de solicitudes", description: "Utilizamos los datos para comprender su caso y presentar propuestas de representación." },
+  { title: "Relación con clientes", description: "La información permite agendar reuniones, compartir documentos y mantener informados a los titulares." },
+  { title: "Obligaciones legales", description: "Resguardamos la información exigida por la Ley 1581 de 2012 y la normatividad de habeas data." },
+];
+
+const holderRights = [
+  "Conocer y acceder a sus datos personales",
+  "Actualizar y rectificar información inexacta",
+  "Revocar la autorización y solicitar supresión",
+  "Presentar consultas y reclamos",
+];
 
 const whatsappLink =
   "https://wa.me/573052566811?text=Hola,%20necesito%20asesor%C3%ADa%20legal%20sobre%20indemnizaciones";
 
 export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -202,7 +224,15 @@ export function ContactSection() {
                 className="mt-0.5 h-6 w-6 shrink-0 rounded border-border text-primary focus:ring-2 focus:ring-primary cursor-pointer accent-primary"
               />
               <label htmlFor="aviso" className="text-sm leading-snug text-muted-foreground cursor-pointer select-none">
-                Acepto el aviso de privacidad y autorizo el tratamiento confidencial de mis datos para recibir asesoría legal.
+                Acepto la{" "}
+                <button
+                  type="button"
+                  onClick={() => setIsPrivacyModalOpen(true)}
+                  className="font-semibold text-primary underline underline-offset-2 hover:text-primary/80"
+                >
+                  política de tratamiento de datos personales
+                </button>{" "}
+                y autorizo el tratamiento confidencial de mis datos para recibir asesoría legal.
               </label>
             </div>
             <Button
@@ -226,6 +256,72 @@ export function ContactSection() {
           </form>
         </div>
       </div>
+      <PrivacyDialog open={isPrivacyModalOpen} onOpenChange={setIsPrivacyModalOpen} />
     </section>
+  );
+}
+
+function PrivacyDialog({ open, onOpenChange }: { open: boolean, onOpenChange: (open: boolean) => void }) {
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="max-h-[85vh] overflow-y-auto sm:max-w-2xl">
+        <DialogHeader>
+          <DialogTitle className="text-xl font-bold">Política de Tratamiento de Datos Personales</DialogTitle>
+          <DialogDescription>
+            Conforme a la Ley 1581 de 2012, garantizamos la protección de su información personal.
+          </DialogDescription>
+        </DialogHeader>
+
+        <div className="space-y-6 py-4">
+          <div>
+            <h3 className="text-base font-semibold text-foreground mb-3">Finalidades del tratamiento</h3>
+            <ul className="space-y-2">
+              {dataPurposes.map((item) => (
+                <li key={item.title} className="text-sm text-muted-foreground">
+                  <span className="font-medium text-foreground">{item.title}:</span> {item.description}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-base font-semibold text-foreground mb-3">Sus derechos como titular</h3>
+            <ul className="space-y-1">
+              {holderRights.map((right, idx) => (
+                <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <span className="text-primary">✓</span>
+                  {right}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-xl bg-muted/50 p-4 text-sm">
+            <p className="text-muted-foreground">
+              <strong className="text-foreground">Responsable:</strong> Organización Jurídica Indemnizaciones Abogados
+            </p>
+            <p className="text-muted-foreground mt-1">
+              Para consultas o reclamos: <a href="mailto:contacto@indemnizacionesabogados.com" className="text-primary underline">contacto@indemnizacionesabogados.com</a>
+            </p>
+          </div>
+
+          <div className="flex justify-end gap-3 pt-2">
+            <Link
+              href="/politica-tratamiento-datos-personales"
+              className="text-sm text-primary underline underline-offset-2 hover:text-primary/80"
+            >
+              Ver política completa
+            </Link>
+            <Button
+              type="button"
+              onClick={() => onOpenChange(false)}
+              className="rounded-full bg-[linear-gradient(135deg,#c8a033,#f9d423)] text-foreground"
+            >
+              Entendido
+            </Button>
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 }
