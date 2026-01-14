@@ -164,10 +164,10 @@ export default function DataPolicyPage() {
               </p>
 
               <div className="grid gap-4 sm:grid-cols-2">
-                <a href="mailto:contacto@indemnizacionesabogados.com" className="flex flex-col items-center justify-center p-6 rounded-xl border border-border bg-white hover:border-primary/50 transition-colors group">
+                <a href="mailto:indemnizacionesabogados1@gmail.com" className="flex flex-col items-center justify-center p-6 rounded-xl border border-border bg-white hover:border-primary/50 transition-colors group">
                   <span className="mb-2 text-2xl">✉️</span>
                   <span className="font-semibold text-foreground group-hover:text-primary">Correo Electrónico</span>
-                  <span className="text-sm text-muted-foreground">contacto@indemnizacionesabogados.com</span>
+                  <span className="text-sm text-muted-foreground">indemnizacionesabogados1@gmail.com</span>
                 </a>
                 <a href="https://wa.me/573052566811" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center p-6 rounded-xl border border-border bg-white hover:border-primary/50 transition-colors group">
                   <span className="mb-2 text-2xl">💬</span>
@@ -178,7 +178,7 @@ export default function DataPolicyPage() {
 
               <div className="text-center text-xs text-muted-foreground mt-8">
                 <p>Responsable del tratamiento: Organización Jurídica Indeminzaciones Abogados</p>
-                <p>NIT XXXXXXXX-X · Medellín, Colombia</p>
+                <p>Medellín, Colombia</p>
               </div>
             </article>
 

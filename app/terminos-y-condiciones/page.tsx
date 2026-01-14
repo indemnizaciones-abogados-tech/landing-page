@@ -152,7 +152,7 @@ export default function TermsAndConditionsPage() {
                 ¿Dudas sobre nuestros términos legales?
               </p>
               <p className="text-muted-foreground">
-                Escribe a <a href="mailto:contacto@indemnizacionesabogados.com" className="font-semibold text-primary hover:underline">contacto@indemnizacionesabogados.com</a>
+                Escribe a <a href="mailto:indemnizacionesabogados1@gmail.com" className="font-semibold text-primary hover:underline">indemnizacionesabogados1@gmail.com</a>
                 <br />o contáctanos vía WhatsApp al <strong>+57 305 256 6811</strong>.
               </p>
             </div>
