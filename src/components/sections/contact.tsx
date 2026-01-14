@@ -110,8 +110,8 @@ export function ContactSection() {
               <div className="grid gap-4 rounded-2xl bg-white/10 p-5 text-sm">
                 <div>
                   <p className="text-white/70">Correo</p>
-                  <a className="font-semibold text-accent" href="mailto:contacto@indemnizacionesabogados.com">
-                    contacto@indemnizacionesabogados.com
+                  <a className="font-semibold text-accent" href="mailto:indemnizacionesabogados1@gmail.com">
+                    indemnizacionesabogados1@gmail.com
                   </a>
                 </div>
                 <div>
