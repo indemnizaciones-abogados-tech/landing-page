@@ -58,6 +58,9 @@ export const metadata: Metadata = {
   title: "Política de Tratamiento de Datos Personales | Indeminzaciones Abogados",
   description:
     "Conoce cómo Indeminzaciones Abogados recoge, protege y usa tus datos personales conforme a la Ley 1581 de 2012.",
+  alternates: {
+    canonical: "/politica-tratamiento-datos-personales",
+  },
 };
 
 export default function DataPolicyPage() {
