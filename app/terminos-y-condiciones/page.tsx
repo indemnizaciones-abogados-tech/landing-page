@@ -35,6 +35,9 @@ export const metadata: Metadata = {
   title: "Términos y Condiciones | Indeminzaciones Abogados",
   description:
     "Revisa los términos de uso, garantías del usuario y actividades prohibidas al interactuar con Indeminzaciones Abogados.",
+  alternates: {
+    canonical: "/terminos-y-condiciones",
+  },
 };
 
 export default function TermsAndConditionsPage() {
