@@ -31,6 +31,12 @@ export const metadata: Metadata = {
     "perjuicios morales y materiales",
     "falla en el servicio medico",
     "despido con fuero de salud",
+
+    // Partner Names (SEO discovery)
+    "Juan Carlos Benitez Mosquera",
+    "Juan Carlos Benitez abogado",
+    "Carlos Andrés Lopez Soto",
+    "Carlos Andrés Lopez abogado",
   ],
   alternates: {
     canonical: "/",

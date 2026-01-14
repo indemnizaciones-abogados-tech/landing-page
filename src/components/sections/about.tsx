@@ -21,7 +21,7 @@ const partners: Partner[] = [
     name: "Carlos Andrés Lopez Soto",
     role: "Socio fundador · Abogado",
     description:
-      "Especialista en responsabilidad civil, seguros y derecho laboral. Ha representado a personas naturales y empresas en litigios estratégicos y realizó su judicatura en la Rama Judicial, aportando visión procesal integral.",
+      "Abogado especialista en responsabilidad civil, seguros y derecho laboral. Ha representado a personas naturales y empresas en litigios estratégicos y realizó su judicatura en la Rama Judicial, aportando visión procesal integral.",
     image: "/team/carlos-andres-lopez.jpg",
     linkedin: "https://www.linkedin.com/in/carlos-andrés-lopez-soto/",
   },

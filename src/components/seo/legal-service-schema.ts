@@ -121,5 +121,91 @@ export const legalServiceJsonLd = {
         },
       ],
     },
+    {
+      "@type": "Person",
+      "@id": "https://indemnizacionesabogados.com/#juan-carlos-benitez",
+      name: "Juan Carlos Benitez Mosquera",
+      alternateName: ["Juan Carlos Benitez", "Juan Carlos Benitez M."],
+      jobTitle: "Abogado especialista en indemnizaciones y responsabilidad civil",
+      description:
+        "Director y socio fundador de Indemnizaciones Abogados. Abogado con amplia experiencia en litigios de responsabilidad civil, seguros y derecho médico. Ha representado a compañías aseguradoras como Chubb, Allianz, Berkley, Suramericana y AXA.",
+      url: "https://indemnizacionesabogados.com/#confianza",
+      image: "https://indemnizacionesabogados.com/team/juan-carlos-benitez.jpg",
+      sameAs: ["https://www.linkedin.com/in/juan-carlos-benitez-mosquera/"],
+      worksFor: {
+        "@id": "https://indemnizacionesabogados.com/#organization",
+      },
+      knowsAbout: [
+        "Indemnizaciones",
+        "Responsabilidad civil",
+        "Derecho de seguros",
+        "Derecho médico",
+        "Accidentes de tránsito",
+        "Abogado de indemnizaciones Colombia",
+      ],
+      hasCredential: [
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "Especialización",
+          name: "Especialista en Derecho Procesal Civil",
+          recognizedBy: {
+            "@type": "Organization",
+            name: "Universidad Externado de Colombia",
+          },
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "Especialización",
+          name: "Especialista en Responsabilidad Civil y Seguros",
+          recognizedBy: {
+            "@type": "Organization",
+            name: "UNAULA",
+          },
+        },
+      ],
+    },
+    {
+      "@type": "Person",
+      "@id": "https://indemnizacionesabogados.com/#carlos-andres-lopez",
+      name: "Carlos Andrés Lopez Soto",
+      alternateName: ["Carlos Andrés Lopez", "Carlos Lopez Soto"],
+      jobTitle: "Abogado especialista en indemnizaciones y seguros",
+      description:
+        "Socio fundador de Indemnizaciones Abogados. Especialista en responsabilidad civil, seguros y derecho laboral. Ha representado a personas naturales y empresas en litigios estratégicos de indemnizaciones.",
+      url: "https://indemnizacionesabogados.com/#confianza",
+      image: "https://indemnizacionesabogados.com/team/carlos-andres-lopez.jpg",
+      sameAs: ["https://www.linkedin.com/in/carlos-andrés-lopez-soto/"],
+      worksFor: {
+        "@id": "https://indemnizacionesabogados.com/#organization",
+      },
+      knowsAbout: [
+        "Indemnizaciones",
+        "Responsabilidad civil",
+        "Derecho de seguros",
+        "Derecho laboral",
+        "Accidentes laborales",
+        "Abogado de indemnizaciones Colombia",
+      ],
+      hasCredential: [
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "Especialización",
+          name: "Especialista en Derecho Laboral y Seguridad Social",
+          recognizedBy: {
+            "@type": "Organization",
+            name: "Universidad Cooperativa de Colombia",
+          },
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "Especialización",
+          name: "Especialista en Responsabilidad Civil y Seguros",
+          recognizedBy: {
+            "@type": "Organization",
+            name: "UNAULA",
+          },
+        },
+      ],
+    },
   ],
 } as const;
